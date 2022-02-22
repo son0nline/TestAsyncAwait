@@ -50,12 +50,15 @@ namespace TestAsyncAwait
             Console.WriteLine($"\r Total: {Total}");
         }
 
-        public async void Run2Async(){
+        public async void Run2Async()
+        {
 
             // gọi 2 hàm bất đồng bộ 
             Task<int> rsTaskRunning = LongTimeRunningTaskAsync("method 1 ",100);
             Task<int> rsTaskRunning2 = LongTimeRunningTaskAsync("method 2 ", 20);
+            // cả 2 thằng cùng chạy 
             // tất nhiên là thằng nào gọi trước sẽ chạy trước rồi 
+
             
             
             // kể cả đảo thứ tự của (await) thì func nào được gọi trước vẫn chạy trước
