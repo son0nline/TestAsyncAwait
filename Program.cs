@@ -7,10 +7,10 @@ namespace TestAsyncAwait
     {
         static void Main(string[] args)
         {
-            //MyTestAsyncAwait.Run();
+            MyTestAsyncAwait.Run();
 
-            MyKnowbaseAsyncAwait myKnowbaseAsyncAwait = new MyKnowbaseAsyncAwait();
-            myKnowbaseAsyncAwait.Run();
+            // MyKnowbaseAsyncAwait myKnowbaseAsyncAwait = new MyKnowbaseAsyncAwait();
+            // myKnowbaseAsyncAwait.Run();
 
             //myKnowbaseAsyncAwait.Run2Async();
 

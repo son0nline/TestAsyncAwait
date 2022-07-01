@@ -10,7 +10,9 @@ namespace TestAsyncAwait{
             Method1();
             await Method2();
             // nhưng có await ở 2 nên nó sẽ chờ 2 chạy xong mới chạy 3
-
+            
+            // Method4 chạy bất đồng bộ cùng với Method3            
+            Method4();
             Method3();
         }
 
@@ -51,6 +53,20 @@ namespace TestAsyncAwait{
                 // Do something
                 Task.Delay(100).Wait();
             }
+        }
+
+        // tương tư như thằng 2
+        public static async Task Method4()
+        {   
+            await Task.Run(() =>
+            {
+                for (int i = 0; i < 100; i++)
+                {
+                    Console.WriteLine($" Method 4 {i}");
+                    // Do something
+                    Task.Delay(100).Wait();
+                }
+            });
         }
 
     }
